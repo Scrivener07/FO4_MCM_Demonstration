@@ -52,6 +52,67 @@
 					"valueOptions": {
 						"sourceType": "ModSettingBool"
 					}
+				},
+				{
+					"id": "fHUDOpacity:INIT",
+					"text": "Hud Opacity",
+					"type": "slider",
+					"help": "This slider controls the HUD opacity. Range: 0.0-1.0",
+					"valueOptions": {
+						"min": 0.0,
+						"max": 1.0,
+						"step": 0.05,
+						"sourceType": "ModSettingFloat"
+					},
+					"groupCondition": 1
+				},
+				{
+					"id": "fPipboyEffectColorR:INIT",
+					"text": "Pipboy Effect Red",
+					"type": "slider",
+					"help": "This slider controls the pipboy color effect on the red channel. Range: 0.0-1.0",
+					"valueOptions": {
+						"min": 0.0,
+						"max": 1.0,
+						"step": 0.05,
+						"sourceType": "ModSettingFloat"
+					},
+					"groupCondition": 1
+				},
+				{
+					"id": "fPipboyEffectColorG:INIT",
+					"text": "Pipboy Effect Green",
+					"type": "slider",
+					"help": "This slider controls the pipboy color effect on the green channel. Range: 0.0-1.0",
+					"valueOptions": {
+						"min": 0.0,
+						"max": 1.0,
+						"step": 0.05,
+						"sourceType": "ModSettingFloat"
+					},
+					"groupCondition": 1
+				},
+				{
+					"id": "fPipboyEffectColorB:INIT",
+					"text": "Pipboy Effect Blue",
+					"type": "slider",
+					"help": "This slider controls the pipboy color effect on the blue channel. Range: 0.0-1.0",
+					"valueOptions": {
+						"min": 0.0,
+						"max": 1.0,
+						"step": 0.05,
+						"sourceType": "ModSettingFloat"
+					},
+					"groupCondition": 1
+				},
+				{
+					"id": "bCrosshairEnabled:INIT",
+					"text": "Crosshair Enabled",
+					"type": "switcher",
+					"help": "Controls whether crosshair appears on the HUD.",
+					"valueOptions": {
+						"sourceType": "ModSettingBool"
+					}
 				}
 			]
 		},
