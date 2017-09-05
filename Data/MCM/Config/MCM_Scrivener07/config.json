@@ -2,8 +2,7 @@
 	"minMcmVersion": 1,
 	"modName": "MCM_Scrivener07",
 	"displayName": "Scrivener07",
-	"pluginRequirements":
-	[
+	"pluginRequirements": [
 		"fallout4.esm"
 	],
 	"content":
@@ -20,21 +19,94 @@
 			"type": "image",
 			"libName": "MCM_Scrivener07",
 			"className": "Splash"
+		}
+	],
+	"pages":
+	[
+		{
+			"pageDisplayName": "Hello Page",
+			"content":
+			[
+				{
+					"text": "Hello Button",
+					"type": "button",
+					"help": "Clicking this will call a papyrus function.",
+					"action": {
+						"type": "CallGlobalFunction",
+						"script": "Scrivener07:Settings",
+						"function": "HelloWorld",
+						"params": ["from Scrivener07!"]
+					}
+				}
+			]
 		},
 		{
-			"type": "empty"
+			"pageDisplayName": "INI Setting",
+			"content":
+			[
+				{
+					"id": "bBorderRegionsEnabled:INIT",
+					"text": "Border Regions",
+					"type": "switcher",
+					"help": "Controls whether the worlds border region is enabled.",
+					"valueOptions": {
+						"sourceType": "ModSettingBool"
+					}
+				}
+			]
 		},
 		{
-			"text": "Hello Button",
-			"type": "button",
-			"help": "Clicking this will call a papyrus function.",
-			"action":
-			{
-				"type": "CallGlobalFunction",
-				"script": "Scrivener07:Settings",
-				"function": "HelloWorld",
-				"params": ["from Scrivener07!"]
-			}
+			"pageDisplayName": "Game Setting",
+			"content":
+			[
+				{
+					"id": "fGunShellLifetime:GMST",
+					"text": "Gun Shell Lifetime",
+					"type": "slider",
+					"help": "This slider controls the lifetime of gun shells. Range: 1-120",
+					"valueOptions": {
+						"min": 0,
+						"max": 120,
+						"step": 1,
+						"sourceType": "ModSettingFloat"
+					},
+					"groupCondition": 1
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Global Setting",
+			"content":
+			[
+				{
+					"id": "GameHour:GLOB",
+					"text": "Game Hour",
+					"type": "slider",
+					"help": "This slider controls the current time of day. Range: 0-23",
+					"valueOptions": {
+						"min": 0,
+						"max": 23,
+						"step": 1,
+						"sourceType": "GlobalValue",
+						"sourceForm": "Fallout4.esm|38"
+					},
+					"groupCondition": 1
+				},
+				{
+					"id": "TimeScale:GLOB",
+					"text": "Time Scale",
+					"type": "slider",
+					"help": "This slider controls the timescale. Default: 20",
+					"valueOptions": {
+						"min": 0,
+						"max": 50,
+						"step": 1,
+						"sourceType": "GlobalValue",
+						"sourceForm": "Fallout4.esm|3A"
+					},
+					"groupCondition": 1
+				}
+			]
 		}
 	]
 }
