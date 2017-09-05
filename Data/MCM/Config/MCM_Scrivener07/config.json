@@ -1,0 +1,40 @@
+{
+	"minMcmVersion": 1,
+	"modName": "MCM_Scrivener07",
+	"displayName": "Scrivener07",
+	"pluginRequirements":
+	[
+		"fallout4.esm"
+	],
+	"content":
+	[
+		{
+			"text": "This is Scrivener07's MCM demonstration",
+			"align": "center",
+			"type": "text"
+		},
+		{
+			"type": "empty"
+		},
+		{
+			"type": "image",
+			"libName": "MCM_Scrivener07",
+			"className": "Splash"
+		},
+		{
+			"type": "empty"
+		},
+		{
+			"text": "Hello Button",
+			"type": "button",
+			"help": "Clicking this will call a papyrus function.",
+			"action":
+			{
+				"type": "CallGlobalFunction",
+				"script": "Scrivener07:Settings",
+				"function": "HelloWorld",
+				"params": ["from Scrivener07!"]
+			}
+		}
+	]
+}
