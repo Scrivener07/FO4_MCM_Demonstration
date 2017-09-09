@@ -2,7 +2,8 @@
 	"minMcmVersion": 1,
 	"modName": "MCM_Scrivener07",
 	"displayName": "Scrivener07",
-	"pluginRequirements": [
+	"pluginRequirements":
+	[
 		"fallout4.esm"
 	],
 	"content":
@@ -13,93 +14,48 @@
 			"type": "text"
 		},
 		{
-			"type": "empty"
+			"type": "spacer"
 		},
 		{
 			"type": "image",
 			"libName": "MCM_Scrivener07",
 			"className": "Splash"
+		},
+		{
+			"type": "spacer",
+			"numLines": 2
+		},
+		{
+			"text": "Hello Button",
+			"type": "button",
+			"help": "Clicking this will call a papyrus function.",
+			"action":
+			{
+				"type": "CallGlobalFunction",
+				"script": "Scrivener07:Settings",
+				"function": "HelloWorld",
+				"params":
+				[
+					"from Scrivener07!"
+				]
+			}
 		}
 	],
 	"pages":
 	[
 		{
-			"pageDisplayName": "Hello Page",
-			"content":
-			[
-				{
-					"text": "Hello Button",
-					"type": "button",
-					"help": "Clicking this will call a papyrus function.",
-					"action": {
-						"type": "CallGlobalFunction",
-						"script": "Scrivener07:Settings",
-						"function": "HelloWorld",
-						"params": ["from Scrivener07!"]
-					}
-				}
-			]
-		},
-		{
 			"pageDisplayName": "INI Setting",
 			"content":
 			[
-				{
-					"id": "bBorderRegionsEnabled:INIT",
-					"text": "Border Regions",
-					"type": "switcher",
-					"help": "Controls whether the worlds border region is enabled.",
-					"valueOptions": {
-						"sourceType": "ModSettingBool"
-					}
-				},
 				{
 					"id": "fHUDOpacity:INIT",
 					"text": "Hud Opacity",
 					"type": "slider",
 					"help": "This slider controls the HUD opacity. Range: 0.0-1.0",
-					"valueOptions": {
-						"min": 0.0,
-						"max": 1.0,
-						"step": 0.05,
-						"sourceType": "ModSettingFloat"
-					},
-					"groupCondition": 1
-				},
-				{
-					"id": "fPipboyEffectColorR:INIT",
-					"text": "Pipboy Effect Red",
-					"type": "slider",
-					"help": "This slider controls the pipboy color effect on the red channel. Range: 0.0-1.0",
-					"valueOptions": {
-						"min": 0.0,
-						"max": 1.0,
-						"step": 0.05,
-						"sourceType": "ModSettingFloat"
-					},
-					"groupCondition": 1
-				},
-				{
-					"id": "fPipboyEffectColorG:INIT",
-					"text": "Pipboy Effect Green",
-					"type": "slider",
-					"help": "This slider controls the pipboy color effect on the green channel. Range: 0.0-1.0",
-					"valueOptions": {
-						"min": 0.0,
-						"max": 1.0,
-						"step": 0.05,
-						"sourceType": "ModSettingFloat"
-					},
-					"groupCondition": 1
-				},
-				{
-					"id": "fPipboyEffectColorB:INIT",
-					"text": "Pipboy Effect Blue",
-					"type": "slider",
-					"help": "This slider controls the pipboy color effect on the blue channel. Range: 0.0-1.0",
-					"valueOptions": {
-						"min": 0.0,
-						"max": 1.0,
+					"valueOptions":
+					{
+						"min": 0,
+						"max": 1,
 						"step": 0.05,
 						"sourceType": "ModSettingFloat"
 					},
@@ -110,7 +66,8 @@
 					"text": "Crosshair Enabled",
 					"type": "switcher",
 					"help": "Controls whether crosshair appears on the HUD.",
-					"valueOptions": {
+					"valueOptions":
+					{
 						"sourceType": "ModSettingBool"
 					}
 				}
@@ -121,15 +78,44 @@
 			"content":
 			[
 				{
-					"id": "fGunShellLifetime:GMST",
-					"text": "Gun Shell Lifetime",
+					"id": "iHUDEnemyHealthSkullIconLevelDifference:GMST",
+					"text": "iHUDEnemyHealthSkullIconLevelDifference",
 					"type": "slider",
-					"help": "This slider controls the lifetime of gun shells. Range: 1-120",
-					"valueOptions": {
-						"min": 0,
-						"max": 120,
+					"help": "No help available.",
+					"valueOptions":
+					{
+						"min": 1,
+						"max": 100,
 						"step": 1,
-						"sourceType": "ModSettingFloat"
+						"sourceType": "ModSettingInt"
+					},
+					"groupCondition": 1
+				},
+				{
+					"id": "iInventoryAskQuantityAt:GMST",
+					"text": "iInventoryAskQuantityAt",
+					"type": "slider",
+					"help": "No help available.",
+					"valueOptions":
+					{
+						"min": 1,
+						"max": 100,
+						"step": 1,
+						"sourceType": "ModSettingInt"
+					},
+					"groupCondition": 1
+				},
+				{
+					"id": "iTerminalDisplayRate:GMST",
+					"text": "iTerminalDisplayRate",
+					"type": "slider",
+					"help": "No help available.",
+					"valueOptions":
+					{
+						"min": 1,
+						"max": 500,
+						"step": 1,
+						"sourceType": "ModSettingInt"
 					},
 					"groupCondition": 1
 				}
@@ -140,11 +126,12 @@
 			"content":
 			[
 				{
-					"id": "GameHour:GLOB",
+					"id": "fGameHour:GLOB",
 					"text": "Game Hour",
 					"type": "slider",
 					"help": "This slider controls the current time of day. Range: 0-23",
-					"valueOptions": {
+					"valueOptions":
+					{
 						"min": 0,
 						"max": 23,
 						"step": 1,
@@ -154,11 +141,12 @@
 					"groupCondition": 1
 				},
 				{
-					"id": "TimeScale:GLOB",
+					"id": "fTimeScale:GLOB",
 					"text": "Time Scale",
 					"type": "slider",
 					"help": "This slider controls the timescale. Default: 20",
-					"valueOptions": {
+					"valueOptions":
+					{
 						"min": 0,
 						"max": 50,
 						"step": 1,
